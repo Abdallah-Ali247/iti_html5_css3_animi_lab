@@ -1,0 +1,139 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 1s ease-in-out;
+}
+
+
+
+main{
+    display: flex;
+    justify-content: space-between;
+    max-width: 85vw;
+    max-height: 90vh;
+    border: 5px groove blue;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px purple,
+    20px 20px 20px rgb(62, 234, 247) inset,
+    -20px -20px 20px rgb(62, 234, 247) inset;
+}
+
+.leftsec{
+    /* width: 30%; */
+    width: 1200px;
+    border: 2px solid black;
+    overflow: auto;
+
+    column-count: 3;
+    column-gap: 25px;
+    column-rule: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 
+    20px 20px 20px rgb(121, 247, 62) inset,
+    -20px -20px 20px rgb(121, 247, 62) inset;
+}
+
+.rightsec {
+    /* width: 65%; */
+    width: 3000px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    box-shadow: 
+    20px 20px 20px rgb(62, 234, 247) inset,
+    -20px -20px 20px rgb(62, 234, 247) inset;
+    
+}
+
+.rightsec img{
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    border: 3px solid blue;
+    box-shadow: 5px 5px 5px purple;
+}
+
+mark{
+    background-color: red;
+}
+
+/* ***** 1. skew & change main shadow **** */
+main:hover{
+    transform: skew(10deg);
+    box-shadow: 20px 20px 20px rgb(62, 234, 247);
+}
+
+/* ******* 2. scale img & change shadow ***** */
+.rightsec img:hover{
+    transform: scale(1.2);
+    box-shadow: 5px 5px 5px rgb(215, 230, 8);
+}
+
+/* ******* 3. text underline ****** */
+.leftsec:hover{
+    text-decoration: underline;
+}
+
+/* ******* 4. mark shadow ***** */
+mark:hover{
+    box-shadow: 4px 4px 4px yellow inset;
+}
+
+/* ****** 5. shrink main when click ***** */
+main:active{
+    transform: scale(0.7);
+    /* animation: mainActive 1s; */
+}
+
+/* @keyframes mainActive {
+    to{
+        transform: scale(0.5);
+    }
+} */
+
+
+/* ****** 6. scale img when active ****** */
+.rightsec img:active{
+    transform: scale(3);
+    /* animation: scaleImg 1s; */
+}
+
+/* @keyframes scaleImg{
+    to{
+        transform: scale(3);
+    }
+} */
+
+
+/* ***** 7. change mark background when active ******* */
+mark:active{
+    background-color: rgb(0, 217, 255);
+}
+
+/* ****** 8. rotate img at small screen ******* */
+@media screen and (max-width: 455px){
+    .rightsec img{
+        transform: rotate(30deg);
+    }
+    .rightsec img:hover{
+        transform: rotate(0deg);
+        transform: scale(1.2);
+        box-shadow: 5px 5px 5px orange;
+    }
+    .rightsec img:active{
+        border: 4px dotted black;
+        box-shadow: 5px 5px 5px red;
+    }
+    main:hover{
+        transform: none;
+    }
+}
